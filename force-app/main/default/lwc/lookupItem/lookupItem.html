@@ -1,0 +1,26 @@
+<template>
+    <template if:true={record}>
+        <ul> 
+            <li class="slds-dropdown__item list" role="presentation" onclick={handleSelectRecord}>
+                    <span class="slds-media" role="option"> 
+                    <span class="slds-media__figure">
+                        <span class="slds-icon_container slds-icon-standard-account" 
+                              title="Description of icon when needed">
+                            <lightning-icon icon-name={iconName} size="small"  alternative-text="Icon"></lightning-icon>
+                        </span>
+                    </span>
+                    <span class="slds-media__body">
+                        <a href="javascript:void(0);" role="menuitem">
+                            <span class="slds-truncate">{record.Name} </span>
+                        </a>
+                    </span>
+                    </span>
+                </li>
+            </ul>
+            
+    </template>
+
+    <template if:false={record}>
+        <div>No records found</div>
+    </template>
+</template>

@@ -1,0 +1,19 @@
+<template>
+    <lightning-input class="slds-m-around_medium"
+        name="enter-search"
+        label="Search"
+        type="search"
+        onkeyup={handleSearch} 
+        value={selectedName}
+        is-loading={isLoading}>
+    </lightning-input>
+    
+    <template if:true={showResults}>
+        <template if:true={records}>
+            <template for:each={records} for:item="rec">
+                <c-lookup-item key={rec.Id} record={rec} icon-name={iconName}
+                onselect={handleSelect}></c-lookup-item>
+            </template>
+        </template>
+    </template>
+</template>
